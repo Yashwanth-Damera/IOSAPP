@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title> Restaurant</title>  
+    <meta charset="UTF-8" />
+
+    <link href="ios.css" rel="stylesheet">
+        <script src="ios.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <h1>Maltre D</h1>
+
+    <main>
+        <div class="table">
+            <label>Total: </label><input type="number" name="total" placeholder="Enter total Amount" id="total">
+            <label>Rate%: </label><input type="number" name="Rate" placeholder="Enter Rate Percentage" id="Rate">
+            
+        <div id="tabledata">
+           <div class="data">Tip: </div><div class="dataoutput" id="Tipcollected">$0</div>
+           <div class="data">Tax:</div><div class="dataoutput" id="Taxcollected">$0</div>
+           <div class="data">Grand Total</div><div class="dataoutput" id="TotalAmount">$0</div>
+        </div>
+       <input id="submit" type="button" value="calculate" name="submit" onclick="calculate()">  
+    </form>
+    
+    </main>
+
+</body>
+
+</html>
