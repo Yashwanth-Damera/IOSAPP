@@ -1,37 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-    <title> Restaurant</title>  
-    <meta charset="UTF-8" />
-
-    <link href="ios.css" rel="stylesheet">
-        <script src="ios.js"></script>
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+   <style>
+    table {
+      padding-left: 500px;
+      margin-top: 100px;
+    }
+    h1{
+        text-align: center;
+    }
+  </style>
+  <title>Practice App</title>
 </head>
 
 <body>
-
-    <h1>Maltre D</h1>
-
-    <main>
-        <div class="table">
-            <label>Total: </label><input type="number" name="total" placeholder="Enter total Amount" id="total">
-            <label>Rate%: </label><input type="number" name="Rate" placeholder="Enter Rate Percentage" id="Rate">
-            
-        <div id="tabledata">
-           <div class="data">Tip: </div><div class="dataoutput" id="Tipcollected">$0</div>
-           <div class="data">Tax:</div><div class="dataoutput" id="Taxcollected">$0</div>
-           <div class="data">Grand Total</div><div class="dataoutput" id="TotalAmount">$0</div>
-        </div>
-       <input id="submit" type="button" value="calculate" name="submit" onclick="calculate()">  
+  <div>
+      <h1>Maitre D</h1>
+    <form>
+      <table>
+        <tr>
+          <td>Total</td>
+          <td><input type="text" id="total" required></td>
+        </tr>
+        <tr>
+          <td>
+            Tip:
+          </td>
+          <td>
+            <p id="tip"></p>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <p>Rate:</p>
+          </td>
+          <td>
+            <input type="text" id="rate" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Tax:</p>
+          </td>
+          <td>
+            <p id="tax"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Grand Total:</p>
+          </td>
+          <td>
+            <p id="grandtotal"></p>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td></td>
+          <td>
+            <button type="button" id="grand">Calculate</button>
+          </td>
+        </tr>
+      </table>
     </form>
-    
-    </main>
-
+  </div>
 </body>
+<script>
+  const tip1 = (total, rate) => {
+    return (total * rate) / 100;
+  }
+  const tax1 = (total) => {
+    return (total * 5.5) / 100;
+  }
+  const grandtot = (total, tip, tax) => {
+    return total + tip + tax;
+  }
+  document.querySelector('#grand').addEventListener('click', () => {
+    // Never trust the user. ALWAYS white list input text
+    const i = parseFloat(document.querySelector('#total').value)
+    const j = parseFloat(document.querySelector('#rate').value)
+    document.getElementById("tip").innerHTML = "$" + tip1(i, j);
+    document.getElementById("tax").innerHTML = "$" + tax1(i);
+    t = tip1(i, j);
+    ta = tax1(i);
+    document.getElementById("grandtotal").innerHTML = "$"+grandtot(i, t, ta);
+  })
+</script>
 
 </html>
