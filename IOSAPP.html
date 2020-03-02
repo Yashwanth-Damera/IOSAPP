@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+    
    <style>
     table {
       padding-left: 500px;
@@ -71,26 +72,5 @@
     </form>
   </div>
 </body>
-<script>
-  const tip1 = (total, rate) => {
-    return (total * rate) / 100;
-  }
-  const tax1 = (total) => {
-    return (total * 5.5) / 100;
-  }
-  const grandtot = (total, tip, tax) => {
-    return total + tip + tax;
-  }
-  document.querySelector('#grand').addEventListener('click', () => {
-    // Never trust the user. ALWAYS white list input text
-    const i = parseFloat(document.querySelector('#total').value)
-    const j = parseFloat(document.querySelector('#rate').value)
-    document.getElementById("tip").innerHTML = "$" + tip1(i, j);
-    document.getElementById("tax").innerHTML = "$" + tax1(i);
-    t = tip1(i, j);
-    ta = tax1(i);
-    document.getElementById("grandtotal").innerHTML = "$"+grandtot(i, t, ta);
-  })
-</script>
-
+<script src="ios.js"></script>
 </html>

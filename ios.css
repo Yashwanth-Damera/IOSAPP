@@ -44,7 +44,7 @@ font-size: 1em;
 
 
 
-#submit{
+#Calculate{
     border: 1px black;
     border-radius: 20px;
     color: burlywood;
@@ -54,7 +54,7 @@ font-size: 1em;
     padding-left: 10px;
 }
 
-#submit:hover{
+#Calculate:hover{
 
     cursor: pointer;
     background-color:lightslategray;
